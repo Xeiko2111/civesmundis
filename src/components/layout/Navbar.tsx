@@ -42,8 +42,8 @@ export function Navbar() {
             <img src={decor.logoInverse} alt="Cives Mundi" className="h-9 w-auto md:h-10" />
           </Link>
 
-          <div className="flex items-center gap-6">
-            <div className="hidden items-center gap-4 sm:flex">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <div className="flex items-center gap-3 sm:gap-4">
               <LanguageSwitcher minimal />
               <ThemeToggle />
             </div>

@@ -47,12 +47,20 @@ export function NavMenu({ open, onClose }: NavMenuProps) {
     <AnimatePresence>
       {open && (
         <motion.div
-          initial={{ clipPath: 'inset(0 0 100% 0)' }}
-          animate={{ clipPath: 'inset(0 0 0% 0)' }}
-          exit={{ clipPath: 'inset(0 0 100% 0)' }}
-          transition={{ duration: 0.7, ease: easeElegant }}
-          className="fixed inset-0 z-[70] overflow-y-auto bg-ink-950 text-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.45, ease: easeElegant }}
+          className="fixed inset-0 z-[70] flex flex-col bg-ink-950 text-white"
+          style={{ height: '100dvh' }}
         >
+          <motion.div
+            initial={{ y: 24, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 16, opacity: 0 }}
+            transition={{ duration: 0.5, ease: easeElegant }}
+            className="flex min-h-0 flex-1 flex-col overflow-y-auto"
+          >
           <button
             onClick={onClose}
             aria-label={t.nav.cerrar}
@@ -61,7 +69,7 @@ export function NavMenu({ open, onClose }: NavMenuProps) {
             <X size={18} />
           </button>
 
-          <div className="container-page grid min-h-[100svh] grid-cols-1 items-center py-28 lg:grid-cols-12">
+          <div className="container-page grid grid-cols-1 items-center gap-8 py-24 pt-28 lg:grid-cols-12 lg:gap-0 lg:py-28">
             <nav className="lg:col-span-7">
               {items.map((item, i) => (
                 <motion.div
@@ -70,13 +78,13 @@ export function NavMenu({ open, onClose }: NavMenuProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.06, duration: 0.5, ease: easeElegant }}
                   onMouseEnter={() => setHovered(i)}
-                  className="group border-b border-white/10 py-4 md:py-5"
+                  className="group border-b border-white/10 py-3.5 md:py-5"
                 >
                   <Link to={item.to} onClick={onClose} className="flex items-baseline gap-4 md:gap-6">
                     <span className="font-display text-sm text-white/30 transition-colors group-hover:text-orange-corp">
                       0{i + 1}
                     </span>
-                    <span className="font-display text-[10vw] leading-[1.02] text-white/40 transition-colors duration-300 group-hover:text-white lg:text-[3.4vw]">
+                    <span className="font-display text-[9vw] leading-[1.05] text-white/40 transition-colors duration-300 group-hover:text-white sm:text-[10vw] lg:text-[3.4vw]">
                       {item.label}
                     </span>
                   </Link>
@@ -141,6 +149,7 @@ export function NavMenu({ open, onClose }: NavMenuProps) {
             </div>
             <p className="text-xs uppercase tracking-widest text-white/30">Eduardo Saavedra 38, Soria · +34 975 23 31 69</p>
           </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

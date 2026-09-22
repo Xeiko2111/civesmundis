@@ -38,7 +38,7 @@ export function Hero() {
                 initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
                 transition={{ duration: 1, delay: 0.15 + i * 0.12, ease: easeElegant }}
-                className="font-display text-[16vw] leading-[0.86] text-white md:text-[13vw]"
+                className="font-display text-[12vw] leading-[0.92] text-white sm:text-[13vw] md:text-[13vw]"
               >
                 {line}
               </motion.h1>
