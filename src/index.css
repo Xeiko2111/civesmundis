@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink-200;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink-800 antialiased transition-colors duration-300;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .dark body {
+    background-color: #0a0a0c;
+    color: #f7f7f8;
+  }
+
+  ::selection {
+    background-color: #ff6600;
+    color: white;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', ui-serif, serif;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #ff6600;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Barra de scroll fina y naranja para listados internos (paneles flotantes, etc). */
+.scroll-orange {
+  scrollbar-width: thin;
+  scrollbar-color: #ff9b16 transparent;
+}
+.scroll-orange::-webkit-scrollbar {
+  width: 4px;
+}
+.scroll-orange::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-orange::-webkit-scrollbar-thumb {
+  background-color: #ff9b16;
+  border-radius: 9999px;
+}
+.scroll-orange::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9108;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-8xl px-6 md:px-10 lg:px-16;
+}
+
+/*
+ * Tema oscuro: el sitio está construido con secciones que son o bien claras
+ * (bg-white / bg-ink-50, texto oscuro) o ya oscuras por diseño (bg-ink-900 /
+ * bg-ink-950, texto blanco). En vez de añadir variantes dark: en cada
+ * componente, se reasignan aquí las clases de las secciones CLARAS cuando
+ * el usuario activa el tema oscuro — las secciones ya oscuras no se tocan,
+ * porque ya encajan con ambos temas.
+ */
+.dark .bg-white {
+  background-color: #0a0a0c;
+}
+.dark .bg-ink-50 {
+  background-color: #131316;
+}
+.dark .bg-ink-100 {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.dark .bg-ink-200 {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.dark .text-ink-900 {
+  color: #ffffff;
+}
+.dark .text-ink-800 {
+  color: rgba(255, 255, 255, 0.85);
+}
+.dark .text-ink-700 {
+  color: rgba(255, 255, 255, 0.75);
+}
+.dark .text-ink-600 {
+  color: rgba(255, 255, 255, 0.65);
+}
+.dark .text-ink-500 {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark .text-ink-400 {
+  color: rgba(255, 255, 255, 0.4);
+}
+.dark .text-ink-300 {
+  color: rgba(255, 255, 255, 0.3);
+}
+.dark .border-ink-100,
+.dark .border-ink-200,
+.dark .divide-ink-200 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.dark input,
+.dark select,
+.dark textarea {
+  color: #ffffff;
+}

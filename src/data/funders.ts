@@ -1,0 +1,45 @@
+export interface Funder {
+  name: string
+  image: string
+}
+
+// Financiadores documentados en la auditoría (más de 40 administraciones e instituciones)
+export const funders: Funder[] = [
+  { name: 'Unión Europea', image: 'union-europea' },
+  { name: 'AECID', image: 'aecid' },
+  { name: 'Ministerio de Educación', image: 'ministerio-educacion' },
+  { name: 'Sociedad Estatal de Conmemoraciones Culturales', image: 'sociedad-conmemoraciones-culturales' },
+  { name: 'Fundación Biodiversidad', image: 'fundacion-biodiversidad' },
+  { name: 'Junta de Castilla y León', image: 'junta-castilla-leon' },
+  { name: 'Comunidad de Madrid', image: 'comunidad-madrid' },
+  { name: 'Agencia Catalana de Cooperación al Desarrollo', image: 'agencia-catalana-cooperacion' },
+  { name: 'Obra Social La Caixa', image: 'obra-social-la-caixa' },
+  { name: 'Caja Rural de Soria', image: 'caja-rural-soria' },
+  { name: 'Caja España Duero', image: 'caja-espana-duero' },
+  { name: 'Heraldo de Soria', image: 'heraldo-soria' },
+  { name: 'Grupo Herce', image: 'grupo-herce' },
+  { name: 'Cristal Pharma', image: 'cristal-pharma' },
+  { name: 'Fundación Navalpotro', image: 'fundacion-navalpotro' },
+  { name: 'Fundación ICO', image: 'fundacion-ico' },
+  { name: 'Universidad Complutense de Madrid', image: 'universidad-complutense' },
+  { name: 'Universidad de Valladolid', image: 'universidad-valladolid' },
+  { name: 'Ministerio de Asuntos Exteriores de Francia', image: 'ministerio-exteriores-francia' },
+  { name: 'Obra Social Caja Madrid', image: 'obra-social-caja-madrid' },
+  { name: 'Altener', image: 'altener' },
+  { name: 'BBVA', image: 'bbva' },
+  { name: 'Diputación de Almería', image: 'diputacion-almeria' },
+  { name: 'Diputación de Badajoz', image: 'diputacion-badajoz' },
+  { name: 'Diputación de Burgos', image: 'diputacion-burgos' },
+  { name: 'Diputación de Ciudad Real', image: 'diputacion-ciudad-real' },
+  { name: 'Diputación de León', image: 'diputacion-leon' },
+  { name: 'Diputación de Salamanca', image: 'diputacion-salamanca' },
+  { name: 'Diputación de Soria', image: 'diputacion-soria' },
+  { name: 'Diputación de Zaragoza', image: 'diputacion-zaragoza' },
+  { name: 'Ayuntamiento de Aranda de Duero', image: 'ayto-aranda-de-duero' },
+  { name: 'Ayuntamiento de Huesca', image: 'ayto-huesca' },
+  { name: 'Ayuntamiento de Oviedo', image: 'ayto-oviedo' },
+  { name: 'Ayuntamiento de Salamanca', image: 'ayto-salamanca' },
+  { name: 'Ayuntamiento de Soria', image: 'ayto-soria' },
+  { name: 'Ayuntamiento de Teruel', image: 'ayto-teruel' },
+  { name: 'Ayuntamiento de Zamora', image: 'ayto-zamora' },
+]
